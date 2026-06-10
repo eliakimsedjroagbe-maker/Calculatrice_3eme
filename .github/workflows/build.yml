@@ -10,21 +10,21 @@ jobs:
     runs-on: windows-latest
     
     steps:
-     - uses: actions/upload-artifact@v4
+    - uses: actions/checkout@v3
     
-     - name: Set up Python
-       uses: actions/setup-python@v4
-       with:
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
         python-version: '3.11'
     
-     - name: Install dependencies
-       run: pip install -r requirements.txt
+    - name: Install dependencies
+      run: pip install -r requirements.txt
     
-     - name: Build EXE
-       run: python build_exe.py
+    - name: Build EXE
+      run: python build_exe.py
     
-     - name: Upload artifact
-       uses: actions/upload-artifact@v3
-       with:
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
         name: Calculatrice_3eme.exe
         path: dist/Calculatrice_3eme.exe
